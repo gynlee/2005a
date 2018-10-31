@@ -87,14 +87,16 @@ void InsertToTLB(int vpn, int phyPage)
   //print IPT table//
   printf("\n--- [IPT] ---\n"); 
   for(int x = 0; x < NumPhysPages; x++) { 
-    printf("IPT[%i]: pid=%i, vpn=%i, last used=%i, valid=%i\n", x, memoryTable[x].pid, memoryTable[x].vPage, memoryTable[x].lastUsed, memoryTable[x].valid); 
+    printf("IPT[%i]: pid=%i, vpn=%i, last used=%i, valid=%i\n", 
+    	x, memoryTable[x].pid, memoryTable[x].vPage, memoryTable[x].lastUsed, memoryTable[x].valid); 
   } 
   printf("--- [IPT] ---\n");
   
   //print TLB table//
   printf("\n--- [TLB] ---\n"); 
   for(int x = 0; x < TLBSize; x++) { 
-    printf("TLB[%i]: vpn=%i, phy=%i, valid=%i\n", x, machine->tlb[x].virtualPage, machine->tlb[x].physicalPage, machine->tlb[x].valid); 
+    printf("TLB[%i]: vpn=%i, phy=%i, valid=%i\n", 
+    	x, machine->tlb[x].virtualPage, machine->tlb[x].physicalPage, machine->tlb[x].valid); 
   } 
   printf("--- [TLB] ---\n"); printf("\n");
   
